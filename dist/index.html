@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sortable Todo List</title>
+  <meta name="description"
+    content="Edit, complete or delete to-do tasks. You can also reorder to-dos, if they get out of synch.">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./style.min.css">
+  <script src="./scripts.min.js" defer></script>
+</head>
+
+<body>
+  <div id="loader" class="loader"><span class="visually-hidden">The page is loading...</span></div>
+  <p class="visually-hidden" aria-hidden="true" id="page-loaded"></p>
+  <a href="#main-content" class="element-invisible element-focusable skip-link">Skip to main content</a>
+  <form id="theme-picker" class="theme-picker">
+    <button type="button" id="btn-theme-toggle" class="btn-theme-toggle" aria-pressed>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="theme-icon"
+        id="theme-darkmode">
+        <path
+          d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z">
+        </path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="theme-icon hide"
+        id="theme-lightmode">
+        <path
+          d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z">
+        </path>
+      </svg>
+      <span>Dark Mode:</span> <span id="mode" class="mode"></span>
+      <span class="btn-theme-state" aria-hidden="true"></span>
+    </button>
+  </form>
+  <div class="page-layout">
+    <header class="page-header" id="page-header">
+      <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-logo">
+        <path
+          d="M1 6.85l1.92 1.92L5.8 5.89l-.66-.66-2.22 2.19-1.26-1.23zm0-3.9l1.92 1.92L5.8 1.99l-.66-.66-2.22 2.19-1.26-1.23zm0 7.8l1.92 1.92L5.8 9.79l-.66-.66-2.22 2.19-1.26-1.23z">
+        </path>
+        <path d="M7 6.4h6v1.2H7zm0-3.9h6v1.2H7zm0 7.8h6v1.2H7z">
+        </path>
+      </svg>
+      <h1>Sortable Todo List</h1>
+    </header>
+    <main id="main-content" class="main">
+      <form id="new-todo-form" class="new-todo-form">
+        <div>
+          <label for="todo-date-input">Date <span class="required">*</span></label>
+          <input type="date" name="date" id="todo-date-input" required data-input-date>
+        </div>
+        <div class="todo-input">
+          <label for="todo-text-input">To-do <span class="required">*</span></label>
+          <input type="text" id="todo-text-input" placeholder="Add a task..." required data-input-text>
+        </div>
+        <div class="todo-buttons">
+          <button>Add Todo</button>
+          <button id="reset">Reset</button>
+        </div>
+      </form>
+      <div class="todos">
+        <div id="toolbar" class="toolbar">
+          <button data-sort-button class="sort-button" disabled title="Reorder: Oldest first">
+            <span class="visually-hidden">If to-dos get out of synch, pressing this button
+              will restore them in ascending order (oldest first).</span>
+            <span>Reorder?</span>
+            <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 0v6h-2l2.5 2 2.5-2h-2v-6h-1zm2 0v1h2v-1h-2zm0 2v1h3v-1h-3zm0 2v1h4v-1h-4z" />
+            </svg>
+          </button>
+          <button data-delete-all-todos disabled>
+            Delete all
+          </button>
+        </div>
+        <ul id="list" role="list" class="list"></ul>
+      </div>
+      <template id="list-item-template">
+        <li class="list-item" data-list-item>
+          <div>
+            <p data-list-item-date class="date">dd/mm/yy</p>
+            <p data-list-item-text class="text"></p>
+          </div>
+          <div class="form-buttons">
+            <button data-button-edit class="btn-edit">Edit</button>
+            <button data-button-complete class="btn-complete">Complete</button>
+            <button data-button-delete class="btn-delete">Delete</button>
+          </div>
+        </li>
+      </template>
+    </main>
+    <footer class="page-footer">
+      <ul role="list">
+        <li><a href="https://github.com/chrisnajman/to-do-list-v2" target="_blank" rel="noopener noreferrer">GitHub
+            Repository</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+
+</html>

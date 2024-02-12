@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sortable Todo List</title>
+  <meta name="description"
+    content="Edit, complete or delete to-do tasks. You can also reorder to-dos, if they get out of synch.">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./js/index.js" type="module"></script>
+</head>
+
+<body>
+  <div id="loader" class="loader"><span class="visually-hidden">The page is loading...</span></div>
+  <p class="visually-hidden" aria-hidden="true" id="page-loaded"></p>
+  <a href="#main-content" class="element-invisible element-focusable skip-link">Skip to main content</a>
+  <form id="theme-picker" class="theme-picker">
+    <button type="button" id="btn-theme-toggle" class="btn-theme-toggle" aria-pressed>
+      <svg aria-hidden="true" class="theme-icon" id="theme-darkmode">
+        <use href="./img/sprite.svg#moon"></use>
+      </svg>
+      <svg aria-hidden="true" class="theme-icon hide" id="theme-lightmode">
+        <use href="./img/sprite.svg#sun"></use>
+      </svg>
+      <span>Dark Mode:</span> <span id="mode" class="mode"></span>
+      <span class="btn-theme-state" aria-hidden="true"></span>
+    </button>
+  </form>
+  <div class="page-layout">
+    <header class="page-header" id="page-header">
+      <svg aria-hidden="true" class="icon-logo">
+        <use href="./img/sprite.svg#logo"></use>
+      </svg>
+      <h1>Sortable Todo List</h1>
+    </header>
+    <main id="main-content" class="main">
+      <form id="new-todo-form" class="new-todo-form">
+        <div>
+          <label for="todo-date-input">Date <span class="required">*</span></label>
+          <input type="date" name="date" id="todo-date-input" required data-input-date>
+        </div>
+        <div class="todo-input">
+          <label for="todo-text-input">To-do <span class="required">*</span></label>
+          <input type="text" id="todo-text-input" placeholder="Add a task..." required data-input-text>
+        </div>
+        <div class="todo-buttons">
+          <button>Add Todo</button>
+          <button id="reset">Reset</button>
+        </div>
+      </form>
+      <div class="todos">
+        <div id="toolbar" class="toolbar">
+          <button data-sort-button class="sort-button" disabled title="Reorder: Oldest first">
+            <span class="visually-hidden">If to-dos get out of synch, pressing this button
+              will restore them in ascending order (oldest first).</span>
+            <span>Reorder?</span>
+            <svg aria-hidden="true">
+              <use href="./img/sprite.svg#sort"></use>
+            </svg>
+          </button>
+          <button data-delete-all-todos disabled>
+            Delete all
+          </button>
+        </div>
+        <ul id="list" role="list" class="list"></ul>
+      </div>
+      <template id="list-item-template">
+        <li class="list-item" data-list-item>
+          <div>
+            <p data-list-item-date class="date">dd/mm/yy</p>
+            <p data-list-item-text class="text"></p>
+          </div>
+          <div class="list-buttons">
+            <button data-button-edit class="btn-edit">Edit</button>
+            <button data-button-complete class="btn-complete">Complete</button>
+            <button data-button-delete class="btn-delete">Delete</button>
+          </div>
+        </li>
+      </template>
+    </main>
+    <footer class="page-footer">
+      <ul role="list">
+        <li><a href="https://github.com/chrisnajman/to-do-list-v2" target="_blank" rel="noopener noreferrer">GitHub
+            Repository</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+
+</html>

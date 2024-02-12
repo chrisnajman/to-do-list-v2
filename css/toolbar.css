@@ -1,0 +1,15 @@
+.toolbar {
+    --_content-max-width: 41rem;
+    --_content-space-outside: 2rem;
+    width: min(var(--_content-max-width), 100% - var(--_content-space-outside) * 2);
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.5rem, 1.4079rem + 0.5263vw, 2rem);
+    padding: 3rem;
+    background-color: var(--list-bg);
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+}

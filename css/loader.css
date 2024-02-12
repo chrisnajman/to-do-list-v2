@@ -1,0 +1,47 @@
+.loader {
+    position: fixed;
+    z-index: 500;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--loading-bg);
+    color: var(--loading-txt);
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "Loading...";
+    font-size: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .loader {
+        transition:
+            opacity 0.75s,
+            visibility 0.75s;
+    }
+
+    .loader::after {
+        content: "";
+        font-size: 0rem;
+        width: 10rem;
+        height: 10rem;
+        border: 2rem solid var(--clr-lightest);
+        border-top-color: var(--clr-green);
+        border-radius: 50%;
+        animation: loading 0.75s ease infinite;
+    }
+    @keyframes loading {
+        from {
+            transform: rotate(0turn);
+        }
+        to {
+            transform: rotate(1turn);
+        }
+    }
+}

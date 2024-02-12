@@ -1,0 +1,79 @@
+.list {
+    --_content-max-width: 180rem;
+    --_content-space-outside: 2rem;
+    width: min(var(--_content-max-width), 100% - var(--_content-space-outside) * 2);
+    margin-inline: auto;
+
+    box-shadow: var(--shadow);
+
+    border-radius: 2rem;
+    overflow: clip;
+
+    & li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        @media screen and (width <= 420px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        padding: 4.25rem 3rem;
+        background-color: var(--list-bg);
+        border-bottom: 0.3rem dotted var(--clr-green);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        & > div {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: clamp(1.5rem, 1.2237rem + 1.5789vw, 3rem);
+            @media screen and (width <= 420px) {
+                flex-direction: column;
+            }
+        }
+
+        & .list-buttons {
+            margin-inline-start: auto;
+            display: flex;
+            gap: clamp(1.5rem, 1.4079rem + 0.5263vw, 2rem);
+
+            @media screen and (width <= 420px) {
+                flex-direction: column;
+            }
+
+            & button {
+                margin-inline-start: auto;
+            }
+        }
+
+        & .date {
+            font-weight: 600;
+        }
+
+        & .text {
+            max-width: 60ch;
+            text-wrap: balance;
+            word-break: break-word;
+            hyphens: auto;
+
+            &[contenteditable] {
+                background-color: var(--content-editable-bg);
+                border: 0.3rem dashed var(--content-editable-border);
+                max-width: 50ch;
+                padding: 1rem;
+            }
+        }
+
+        &.complete {
+            background-color: var(--list-complete-bg);
+            & .text {
+                text-decoration: line-through;
+            }
+        }
+    }
+}

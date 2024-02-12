@@ -1,0 +1,50 @@
+:root {
+    --clr-light-blue: rgb(135, 206, 235);
+    --clr-lightest: white;
+    --clr-pale-grey: rgb(226, 226, 226);
+    --clr-mid: rgb(85, 85, 85);
+    --clr-light-green: rgb(239, 250, 250);
+    --clr-green: rgb(4, 167, 167);
+    --clr-grey-green: rgb(44, 58, 58);
+    --clr-dark-green: rgb(3, 94, 94);
+    --clr-dark: #333;
+    --clr-darker: #222;
+    --clr-darkest: black;
+    --clr-warning: red;
+    --clr-orange: orange;
+    --clr-transparent: transparent;
+    --highlight: var(--clr-light-blue);
+
+    --header-footer-border: var(--clr-green);
+    --content-editable-border: var(--clr-green);
+    --shadow: -1px 4px 10px 0px rgba(0, 0, 0, 0.3);
+
+    /* Dark theme (default) */
+    --loading-bg: var(--clr-dark);
+    --loading-txt: var(--clr-light-green);
+    --body-bg: var(--clr-darker);
+    --body-txt: var(--clr-light-green);
+    --header-footer-bg: var(--clr-darkest);
+    --header-footer-txt: var(--clr-lightest);
+    --theme-icon: var(--clr-lightest);
+    --theme-txt: var(--clr-lightest);
+    --form-bg: var(--clr-grey-green);
+    --list-bg: var(--clr-grey-green);
+    --list-complete-bg: var(--clr-mid);
+    --content-editable-bg: var(--clr-darkest);
+}
+
+.light-theme {
+    --loading-bg: var(--clr-light-green);
+    --loading-txt: var(--clr-darkest);
+    --body-bg: var(--clr-light-green);
+    --body-txt: var(--clr-darkest);
+    --header-footer-bg: var(--clr-lightest);
+    --header-footer-txt: var(--clr-darkest);
+    --theme-icon: var(--clr-orange);
+    --theme-txt: var(--clr-darkest);
+    --form-bg: var(--clr-lightest);
+    --list-bg: var(--clr-lightest);
+    --list-complete-bg: var(--clr-pale-grey);
+    --content-editable-bg: var(--clr-light-green);
+}
