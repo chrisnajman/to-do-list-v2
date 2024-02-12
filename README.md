@@ -58,7 +58,8 @@ Disabled until 2 to-dos have been generated. Clicking it will launch a 'confirm'
 > [!NOTE]
 > Local storage will be cleared for only this specific pair of keys in the Sortable Todo List (V2) app; local storage for other apps will not be affected.
 
-> [!WARNING] > **All** to-dos will be permanently deleted from local storage.
+> [!WARNING] 
+> **All** to-dos will be permanently deleted from local storage.
 
 ## To-do List
 
@@ -66,7 +67,8 @@ Disabled until 2 to-dos have been generated. Clicking it will launch a 'confirm'
 - **Complete**: Grey-out the to-do item and `strike-through` the to-do text. Click `Uncomplete` to revert.
 - **Delete**: Delete the to-do item.
 
-> [!WARNING] > Clicking 'Delete' will permanently delete the individual to-do item from local storage.
+> [!WARNING] 
+> Clicking 'Delete' will permanently delete the individual to-do item from local storage.
 
 ---
 
@@ -79,7 +81,8 @@ The 'main' version structures the JavaScript with ES6 Modules. ES6 Modules will 
 > [!NOTE]
 > The 'dist' version also runs on the server.
 
-> [!NOTE] > `scripts.min.js` is not readable by humans. To inspect the JavaScript, look in `scripts.js`.
+> [!NOTE] 
+> `scripts.min.js` is not readable by humans. To inspect the JavaScript, look in `scripts.js`.
 
 > [!NOTE]
 > The functionality remains the same in both versions.
