@@ -30,6 +30,8 @@
 > [!NOTE]
 > This is an upgrading and updating of an [earlier app](https://chrisnajman.github.io/sortable-todo-list/) which I now consider deprecated. The main difference is that in the current version the 'Reorder entries?' button (for maintaining date order) substitutes for drag-and-drop in the earlier version (which I found to be buggy).
 
+---
+
 ## Form
 
 ### Inputs
@@ -41,6 +43,8 @@
 
 - **Add to-do**: Submit a task to the to-do list.
 - **Reset**: Clear date and text inputs and prevent submission to the to-do list.
+
+---
 
 ## Toolbar
 
@@ -60,6 +64,8 @@ Disabled until 2 to-dos have been generated. Clicking it will launch a 'confirm'
 
 > [!CAUTION] 
 > **All** to-dos will be permanently deleted from local storage.
+
+---
 
 ## To-do List
 
