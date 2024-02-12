@@ -58,7 +58,7 @@ Disabled until 2 to-dos have been generated. Clicking it will launch a 'confirm'
 > [!NOTE]
 > Local storage will be cleared for only this specific pair of keys in the Sortable Todo List (V2) app; local storage for other apps will not be affected.
 
-> [!WARNING] 
+> [!CAUTION] 
 > **All** to-dos will be permanently deleted from local storage.
 
 ## To-do List
@@ -67,7 +67,7 @@ Disabled until 2 to-dos have been generated. Clicking it will launch a 'confirm'
 - **Complete**: Grey-out the to-do item and `strike-through` the to-do text. Click `Uncomplete` to revert.
 - **Delete**: Delete the to-do item.
 
-> [!WARNING] 
+> [!CAUTION] 
 > Clicking 'Delete' will permanently delete the individual to-do item from local storage.
 
 ---
