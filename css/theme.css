@@ -15,7 +15,12 @@
     --clr-transparent: transparent;
     --highlight: var(--clr-light-blue);
 
-    --header-footer-border: var(--clr-green);
+    /* Shared borders */
+    --border-radius-small: 0.5rem;
+    --border-radius-medium: 2rem;
+    --border-thin: 0.3rem solid var(--clr-green);
+    --border-thick: 0.5rem solid var(--clr-green);
+
     --content-editable-border: var(--clr-green);
     --shadow: -1px 4px 10px 0px rgba(0, 0, 0, 0.3);
 

@@ -10,6 +10,7 @@
     gap: clamp(1.5rem, 1.4079rem + 0.5263vw, 2rem);
     padding: 3rem;
     background-color: var(--list-bg);
-    border-radius: 2rem;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
     box-shadow: var(--shadow);
 }

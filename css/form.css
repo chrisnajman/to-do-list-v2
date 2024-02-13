@@ -21,7 +21,8 @@
 
     background-color: var(--form-bg);
     box-shadow: var(--shadow);
-    border-radius: 2rem;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
 
     & .required {
         font-weight: 600;
@@ -29,6 +30,8 @@
 
     & input {
         color: var(--clr-darkest);
+        border: var(--border-thin);
+        border-radius: var(--border-radius-small);
     }
 
     & div {

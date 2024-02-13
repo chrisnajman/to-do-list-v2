@@ -1,8 +1,8 @@
 .main button {
     background-color: var(--clr-dark-green);
     color: var(--clr-lightest);
-    border: 0.5rem solid var(--clr-green);
-    border-radius: 2rem;
+    border: var(--border-thin);
+    border-radius: var(--border-radius-small);
     padding: 0.5rem 1.5rem;
     font-weight: 600;
 

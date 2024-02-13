@@ -5,8 +5,8 @@
     margin-inline: auto;
 
     box-shadow: var(--shadow);
-
-    border-radius: 2rem;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
     overflow: clip;
 
     & li {
@@ -21,7 +21,7 @@
         }
         padding: 4.25rem 3rem;
         background-color: var(--list-bg);
-        border-bottom: 0.3rem dotted var(--clr-green);
+        border-bottom: 0.5rem dotted var(--clr-green);
 
         &:last-child {
             border-bottom: 0;

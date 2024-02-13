@@ -16,7 +16,12 @@
     --clr-transparent: transparent;
     --highlight: var(--clr-light-blue);
 
-    --header-footer-border: var(--clr-green);
+    /* Shared borders */
+    --border-radius-small: 0.5rem;
+    --border-radius-medium: 2rem;
+    --border-thin: 0.3rem solid var(--clr-green);
+    --border-thick: 0.5rem solid var(--clr-green);
+
     --content-editable-border: var(--clr-green);
     --shadow: -1px 4px 10px 0px rgba(0, 0, 0, 0.3);
 
@@ -168,13 +173,11 @@ input {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border-style: solid;
 }
 
 .page-header {
     padding: 3.2rem 0;
-    border-bottom-color: var(--header-footer-border);
-    border-width: 0 0 0.5rem 0;
+    border-bottom: var(--border-thick);
 
     @media screen and (width < 360px) {
         padding-inline: 1rem;
@@ -201,8 +204,7 @@ input {
 
 .page-footer {
     padding: 3.2rem 1.6rem;
-    border-top-color: var(--header-footer-border);
-    border-width: 0.5rem 0 0 0;
+    border-top: var(--border-thick);
 
     & a:hover {
         text-decoration: underline;
@@ -246,6 +248,7 @@ input {
     gap: clamp(2.5rem, 2.0395rem + 2.6316vw, 5rem);
 }
 
+/** Helpers */
 /* Scrollable container for tables */
 [role="region"][aria-labelledby][tabindex] {
     overflow: auto;
@@ -405,8 +408,8 @@ input {
 .main button {
     background-color: var(--clr-dark-green);
     color: var(--clr-lightest);
-    border: 0.5rem solid var(--clr-green);
-    border-radius: 2rem;
+    border: var(--border-thin);
+    border-radius: var(--border-radius-small);
     padding: 0.5rem 1.5rem;
     font-weight: 600;
 
@@ -457,7 +460,8 @@ input {
 
     background-color: var(--form-bg);
     box-shadow: var(--shadow);
-    border-radius: 2rem;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
 
     & .required {
         font-weight: 600;
@@ -465,6 +469,8 @@ input {
 
     & input {
         color: var(--clr-darkest);
+        border: var(--border-thin);
+        border-radius: var(--border-radius-small);
     }
 
     & div {
@@ -517,7 +523,8 @@ input {
     gap: clamp(1.5rem, 1.4079rem + 0.5263vw, 2rem);
     padding: 3rem;
     background-color: var(--list-bg);
-    border-radius: 2rem;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
     box-shadow: var(--shadow);
 }
 
@@ -529,8 +536,8 @@ input {
     margin-inline: auto;
 
     box-shadow: var(--shadow);
-
-    border-radius: 2rem;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
     overflow: clip;
 
     & li {
@@ -545,7 +552,7 @@ input {
         }
         padding: 4.25rem 3rem;
         background-color: var(--list-bg);
-        border-bottom: 0.3rem dotted var(--clr-green);
+        border-bottom: 0.5rem dotted var(--clr-green);
 
         &:last-child {
             border-bottom: 0;

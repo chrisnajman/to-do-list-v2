@@ -115,13 +115,11 @@ input {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border-style: solid;
 }
 
 .page-header {
     padding: 3.2rem 0;
-    border-bottom-color: var(--header-footer-border);
-    border-width: 0 0 0.5rem 0;
+    border-bottom: var(--border-thick);
 
     @media screen and (width < 360px) {
         padding-inline: 1rem;
@@ -148,8 +146,7 @@ input {
 
 .page-footer {
     padding: 3.2rem 1.6rem;
-    border-top-color: var(--header-footer-border);
-    border-width: 0.5rem 0 0 0;
+    border-top: var(--border-thick);
 
     & a:hover {
         text-decoration: underline;
