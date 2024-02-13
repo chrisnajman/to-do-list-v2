@@ -3,10 +3,6 @@
     --_content-space-outside: 2rem;
     width: min(var(--_content-max-width), 100% - var(--_content-space-outside) * 2);
     margin-inline: auto;
-
-    box-shadow: var(--shadow);
-    border: var(--border-thick);
-    border-radius: var(--border-radius-medium);
     overflow: clip;
 
     & li {

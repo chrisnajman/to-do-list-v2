@@ -522,10 +522,6 @@ input {
     justify-content: center;
     gap: clamp(1.5rem, 1.4079rem + 0.5263vw, 2rem);
     padding: 3rem;
-    background-color: var(--list-bg);
-    border: var(--border-thick);
-    border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow);
 }
 
 /** List **/
@@ -534,10 +530,6 @@ input {
     --_content-space-outside: 2rem;
     width: min(var(--_content-max-width), 100% - var(--_content-space-outside) * 2);
     margin-inline: auto;
-
-    box-shadow: var(--shadow);
-    border: var(--border-thick);
-    border-radius: var(--border-radius-medium);
     overflow: clip;
 
     & li {
@@ -607,4 +599,12 @@ input {
             }
         }
     }
+}
+
+/** This class added to list and toolbar via todos.js */
+.js-border {
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
+    background: var(--list-bg);
+    box-shadow: var(--shadow);
 }

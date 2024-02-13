@@ -97,8 +97,10 @@ function deleteAllTodos() {
   deleteAllBtn.addEventListener("click", () => {
     if (window.confirm("Do you really want to delete all to-dos?")) {
       const keysToRemove = [
-        "SORTABLE-TODO-LIST-v2-local-todos-redo",
-        "SORTABLE-TODO-LIST-v2-local-sort-dates-enabled",
+        "SORTABLE-TODO-LIST_DIST-todos-redo",
+        "SORTABLE-TODO-LIST_DIST-sort-dates-enabled",
+        "SORTABLE-TODO-LIST_DIST-toolbar-border-state",
+        "SORTABLE-TODO-LIST_DIST-list-border-state",
       ]
 
       keysToRemove.forEach((keyToRemove) => {
@@ -125,13 +127,17 @@ deleteAllTodos()
 
 /** List */
 function toDoList() {
-  const LOCAL_STORAGE_PREFIX = "SORTABLE-TODO-LIST-v2-local"
+  const LOCAL_STORAGE_PREFIX = "SORTABLE-TODO-LIST_DIST"
   const TODOS_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-todos-redo`
   const SORT_DATE_BUTTON_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-sort-dates-enabled`
+  const TOOLBAR_BORDER_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-toolbar-border-state`
+  const LIST_BORDER_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-list-border-state`
+
   const form = document.querySelector("#new-todo-form")
   const resetFormButton = document.getElementById("reset")
   const inputText = document.querySelector("[data-input-text]")
   const inputDate = document.querySelector("[data-input-date]")
+  const toolBar = document.getElementById("toolbar")
   const list = document.getElementById("list")
   const template = document.querySelector("#list-item-template")
 
@@ -151,6 +157,7 @@ function toDoList() {
     const dateString = dateArray.reverse().join("/")
 
     if (todoName === "") return
+
     const newTodo = {
       date: dateString,
       name: todoName,
@@ -165,6 +172,17 @@ function toDoList() {
     inputDate.value = ""
     inputText.value = ""
     inputText.setAttribute("placeholder", "Add a task...")
+
+    // list and toolbar borders
+    const listItems = document.querySelectorAll(".list-item")
+
+    const hasListBorder = listItems.length > 0
+    list.classList.toggle("js-border", hasListBorder)
+    saveListBorderState(hasListBorder)
+
+    const hasToolbarBorder = listItems.length > 1
+    toolBar.classList.toggle("js-border", hasToolbarBorder)
+    saveToolbarBorderState(hasToolbarBorder)
   })
 
   function renderTodo(todo) {
@@ -257,6 +275,34 @@ function toDoList() {
     })
 
     saveTodos()
+
+    // Check the number of list items after deletion
+    const listItems = document.querySelectorAll(".list-item")
+
+    if (listItems.length < 2) {
+      deleteAllBtn.setAttribute("disabled", "")
+      sortButton.setAttribute("disabled", "")
+    }
+
+    const hasListBorder = listItems.length > 0
+
+    // Update the ul#list border state and save to local storage
+    list.classList.toggle("js-border", hasListBorder)
+    saveListBorderState(hasListBorder)
+
+    // Update the div#toolbar border state and save to local storage
+    const hasToolbarBorder = listItems.length > 1
+    toolBar.classList.toggle("js-border", hasToolbarBorder)
+    saveToolbarBorderState(hasToolbarBorder)
+  })
+
+  // Check list and toolbar border states on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const hasListBorder = loadListBorderState()
+    list.classList.toggle("js-border", hasListBorder)
+
+    const hasToolbarBorder = loadToolbarBorderState()
+    toolBar.classList.toggle("js-border", hasToolbarBorder)
   })
 
   // Sort button: date oldest first (ascending)
@@ -275,6 +321,7 @@ function toDoList() {
   })
 
   // Local storage
+  // =============
   function saveTodos() {
     localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(todos))
   }
@@ -282,6 +329,27 @@ function toDoList() {
   function loadTodos() {
     const todosString = localStorage.getItem(TODOS_STORAGE_KEY)
     return JSON.parse(todosString) || []
+  }
+
+  function saveListBorderState(hasListBorder) {
+    localStorage.setItem(LIST_BORDER_STORAGE_KEY, JSON.stringify(hasListBorder))
+  }
+
+  function loadListBorderState() {
+    const borderState = localStorage.getItem(LIST_BORDER_STORAGE_KEY)
+    return JSON.parse(borderState) || false
+  }
+
+  function saveToolbarBorderState(hasToolbarBorder) {
+    localStorage.setItem(
+      TOOLBAR_BORDER_STORAGE_KEY,
+      JSON.stringify(hasToolbarBorder)
+    )
+  }
+
+  function loadToolbarBorderState() {
+    const borderState = localStorage.getItem(TOOLBAR_BORDER_STORAGE_KEY)
+    return JSON.parse(borderState) || false
   }
 
   // save todos and render the list

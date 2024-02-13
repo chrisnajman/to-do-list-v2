@@ -6,6 +6,8 @@ export default function deleteAllTodos() {
       const keysToRemove = [
         "SORTABLE-TODO-LIST-todos-redo",
         "SORTABLE-TODO-LIST-sort-dates-enabled",
+        "SORTABLE-TODO-LIST-toolbar-border-state",
+        "SORTABLE-TODO-LIST-list-border-state",
       ]
 
       keysToRemove.forEach((keyToRemove) => {
