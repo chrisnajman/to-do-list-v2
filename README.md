@@ -11,6 +11,7 @@
 - [The 'dist' Folder](#the-dist-folder)
   - [JavaScript](#javascript)
   - [CSS](#css)
+  - [SVGs](#svgs)
 - [Accessibility](#accessibility)
   - [WAVE Web Accessibility Evaluation Tools Report](#wave-web-accessibility-evaluation-tools-report)
 - [Testing](#testing)
