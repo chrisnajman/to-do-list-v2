@@ -100,6 +100,11 @@ The 'main' version structures the CSS with individual files imported into `index
 > [!NOTE]
 > The styling remains the same in both versions.
 
+
+### SVGs
+
+The 'main' version loads SVG icons via `./img/sprite.svg`. As SVG sprites don't work on the local file system, the SVG icons in 'dist' are coded directly into `index.html`.
+
 ---
 
 ## Accessibility
