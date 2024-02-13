@@ -50,11 +50,11 @@
 
 ### Button: Reorder Entries by Date (asc)
 
-Disabled until 2 to-dos have been generated. Its function is to sort the to-dos in ascending order if the date sequence gets out of sync. This might occur if a day is missed and added later or if an earlier to-do is deleted due to inaccuracy and needs re-insertion.
+Disabled until two to-dos have been generated. Its function is to sort the to-dos in ascending order if the date sequence gets out of sync. This might occur, for example, if a day is missed and added later or if a to-do is accidentally deleted  and needs to be reinserted.
 
 ### Button: Delete all entries
 
-Disabled until 2 to-dos have been generated. Clicking it will launch a 'confirm' dialog. If 'yes' is clicked, local storage for the following keys will be deleted:
+Disabled until two to-dos have been generated. Clicking it will launch a 'confirm' dialog. If 'yes' is clicked, local storage for the following keys will be deleted:
 
 - To-dos for all dates in the to-do list.
 - The 'Reorder entries?' button state value.
