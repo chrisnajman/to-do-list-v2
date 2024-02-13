@@ -50,7 +50,11 @@
 
 ### Button: Reorder Entries by Date (asc)
 
-Disabled until two to-dos have been generated. Its function is to sort the to-dos in ascending order if the date sequence gets out of sync. This might occur, for example, if a day is missed and added later or if a to-do is accidentally deleted  and needs to be reinserted.
+Disabled until two to-dos have been generated. Its function is to sort the to-dos in ascending order if the date sequence gets out of sync. 
+
+> [!NOTE]
+> This might occur, for example, if a day is missed and added later, or if a to-do is accidentally deleted  and needs to be reinserted.
+> Something else.
 
 ### Button: Delete all entries
 
