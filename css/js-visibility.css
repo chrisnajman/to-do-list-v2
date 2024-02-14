@@ -1,0 +1,5 @@
+/** This class added to list and toolbar via todos.js */
+.js-visibility {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}

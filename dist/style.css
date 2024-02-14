@@ -195,7 +195,7 @@ input {
 .main {
     display: flex;
     flex-direction: column;
-    gap: clamp(5rem, 4.0789rem + 5.2632vw, 10rem);
+    gap: clamp(2.5rem, 2.0395rem + 2.6316vw, 5rem);
     overflow: hidden;
     padding-inline: 0;
     padding-block-start: clamp(6rem, 4.8947rem + 6.3158vw, 12rem);
@@ -421,7 +421,6 @@ input {
 
     &[disabled] {
         pointer-events: none;
-        opacity: 0.5;
     }
 
     &.sort-button {
@@ -522,6 +521,12 @@ input {
     justify-content: center;
     gap: clamp(1.5rem, 1.4079rem + 0.5263vw, 2rem);
     padding: 3rem;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
+    background: var(--list-bg);
+    box-shadow: var(--shadow);
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in;
 }
 
 /** List **/
@@ -531,6 +536,12 @@ input {
     width: min(var(--_content-max-width), 100% - var(--_content-space-outside) * 2);
     margin-inline: auto;
     overflow: clip;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
+    background: var(--list-bg);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
 
     & li {
         display: flex;
@@ -601,10 +612,8 @@ input {
     }
 }
 
-/** This class added to list and toolbar via todos.js */
-.js-border {
-    border: var(--border-thick);
-    border-radius: var(--border-radius-medium);
-    background: var(--list-bg);
-    box-shadow: var(--shadow);
+/** Visibility control of .toolbar and .list via todos.js */
+.js-visibility {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
 }

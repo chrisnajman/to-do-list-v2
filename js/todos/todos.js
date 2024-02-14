@@ -57,11 +57,11 @@ export default function toDoList() {
     const listItems = document.querySelectorAll(".list-item")
 
     const hasListBorder = listItems.length > 0
-    list.classList.toggle("js-border", hasListBorder)
+    list.classList.toggle("js-visibility", hasListBorder)
     saveListBorderState(hasListBorder)
 
     const hasToolbarBorder = listItems.length > 1
-    toolBar.classList.toggle("js-border", hasToolbarBorder)
+    toolBar.classList.toggle("js-visibility", hasToolbarBorder)
     saveToolbarBorderState(hasToolbarBorder)
   })
 
@@ -167,22 +167,22 @@ export default function toDoList() {
     const hasListBorder = listItems.length > 0
 
     // Update the ul#list border state and save to local storage
-    list.classList.toggle("js-border", hasListBorder)
+    list.classList.toggle("js-visibility", hasListBorder)
     saveListBorderState(hasListBorder)
 
     // Update the div#toolbar border state and save to local storage
     const hasToolbarBorder = listItems.length > 1
-    toolBar.classList.toggle("js-border", hasToolbarBorder)
+    toolBar.classList.toggle("js-visibility", hasToolbarBorder)
     saveToolbarBorderState(hasToolbarBorder)
   })
 
   // Check list and toolbar border states on page load
   document.addEventListener("DOMContentLoaded", () => {
     const hasListBorder = loadListBorderState()
-    list.classList.toggle("js-border", hasListBorder)
+    list.classList.toggle("js-visibility", hasListBorder)
 
     const hasToolbarBorder = loadToolbarBorderState()
-    toolBar.classList.toggle("js-border", hasToolbarBorder)
+    toolBar.classList.toggle("js-visibility", hasToolbarBorder)
   })
 
   // Sort button: date oldest first (ascending)

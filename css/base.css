@@ -137,7 +137,7 @@ input {
 .main {
     display: flex;
     flex-direction: column;
-    gap: clamp(5rem, 4.0789rem + 5.2632vw, 10rem);
+    gap: clamp(2.5rem, 2.0395rem + 2.6316vw, 5rem);
     overflow: hidden;
     padding-inline: 0;
     padding-block-start: clamp(6rem, 4.8947rem + 6.3158vw, 12rem);

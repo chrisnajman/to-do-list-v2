@@ -4,6 +4,12 @@
     width: min(var(--_content-max-width), 100% - var(--_content-space-outside) * 2);
     margin-inline: auto;
     overflow: clip;
+    border: var(--border-thick);
+    border-radius: var(--border-radius-medium);
+    background: var(--list-bg);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
 
     & li {
         display: flex;

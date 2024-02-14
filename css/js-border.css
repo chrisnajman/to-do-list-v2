@@ -1,7 +1,0 @@
-/** This class added to list and toolbar via todos.js */
-.js-border {
-    border: var(--border-thick);
-    border-radius: var(--border-radius-medium);
-    background: var(--list-bg);
-    box-shadow: var(--shadow);
-}
