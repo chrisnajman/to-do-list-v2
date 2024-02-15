@@ -57,16 +57,7 @@
         flex-grow: 1;
         @media screen and (width < 700px) {
             flex-grow: 0;
-        }
-    }
-
-    .todo-buttons {
-        margin-inline-start: auto;
-        display: flex;
-        gap: clamp(1.5rem, 1.4079rem + 0.5263vw, 2rem);
-
-        & button {
-            margin-inline-start: auto;
+            width: 100%;
         }
     }
 }

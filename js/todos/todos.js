@@ -17,6 +17,7 @@ export default function toDoList() {
   const resetFormButton = document.getElementById("reset")
   const inputText = document.querySelector("[data-input-text]")
   const inputDate = document.querySelector("[data-input-date]")
+
   const toolBar = document.getElementById("toolbar")
   const list = document.getElementById("list")
   const template = document.querySelector("#list-item-template")
@@ -32,6 +33,10 @@ export default function toDoList() {
 
     const todoName = inputText.value
 
+    const dayDateValue = inputDate.value
+    const dayDate = new Date(dayDateValue)
+    const dayNum = dayDate.getDay()
+
     const dateValue = inputDate.value
     const dateArray = dateValue.split("-")
     const dateString = dateArray.reverse().join("/")
@@ -39,6 +44,7 @@ export default function toDoList() {
     if (todoName === "") return
 
     const newTodo = {
+      day: dayNum,
       date: dateString,
       name: todoName,
       complete: false,
@@ -75,6 +81,9 @@ export default function toDoList() {
     textElement.innerText = todo.name
 
     if (todo.date) {
+      const day = templateClone.querySelector("[data-list-item-day]")
+      days(todo, day)
+
       const date = templateClone.querySelector("[data-list-item-date]")
       const dateParts = todo.date.split("/")
       const parsedDate = new Date(
@@ -95,6 +104,35 @@ export default function toDoList() {
     enableDeleteAllBtn(todos)
 
     list.appendChild(templateClone)
+  }
+
+  // Display day of date
+  function days(todo, day) {
+    switch (todo.day) {
+      case 0:
+        day.innerHTML = "Sun<span class='visually-hidden'>day</span>"
+        break
+      case 1:
+        day.innerHTML = "Mon<span class='visually-hidden'>day</span>"
+        break
+      case 2:
+        day.innerHTML = "Tue<span class='visually-hidden'>sday</span>"
+        break
+      case 3:
+        day.innerHTML = "Wed<span class='visually-hidden'>nesday</span>"
+        break
+      case 4:
+        day.innerHTML = "Thu<span class='visually-hidden'>rsday</span>"
+        break
+      case 5:
+        day.innerHTML = "Fri<span class='visually-hidden'>day</span>"
+        break
+      case 6:
+        day.innerHTML = "Sat<span class='visually-hidden'>urday</span>"
+        break
+      default:
+        console.error("Something's gone wrong, please try again later.")
+    }
   }
 
   // Edit button

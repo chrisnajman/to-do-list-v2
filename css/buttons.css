@@ -4,7 +4,7 @@
     border: var(--border-thin);
     border-radius: var(--border-radius-small);
     padding: 0.5rem 1.5rem;
-    font-weight: 600;
+    /* font-weight: 600; */
 
     @media (hover: hover) {
         &:hover {
@@ -24,6 +24,28 @@
             width: 2.4rem;
             height: 2.4rem;
             fill: var(--clr-light-green);
+        }
+    }
+}
+
+.new-todo-form .buttons-wrapper,
+.list .buttons-wrapper {
+    margin-inline-start: auto;
+    display: flex;
+    gap: clamp(1.5rem, 1.4079rem + 0.5263vw, 2rem);
+
+    @media screen and (width <= 420px) {
+        flex-direction: column;
+        justify-content: center;
+        margin-inline: auto;
+    }
+
+    & button {
+        margin-inline-start: auto;
+
+        @media screen and (width <= 420px) {
+            margin-inline-start: auto;
+            margin-inline-end: auto;
         }
     }
 }

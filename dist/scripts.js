@@ -152,6 +152,10 @@ function toDoList() {
 
     const todoName = inputText.value
 
+    const dayDateValue = inputDate.value
+    const dayDate = new Date(dayDateValue)
+    const dayNum = dayDate.getDay()
+
     const dateValue = inputDate.value
     const dateArray = dateValue.split("-")
     const dateString = dateArray.reverse().join("/")
@@ -159,6 +163,7 @@ function toDoList() {
     if (todoName === "") return
 
     const newTodo = {
+      day: dayNum,
       date: dateString,
       name: todoName,
       complete: false,
@@ -195,6 +200,9 @@ function toDoList() {
     textElement.innerText = todo.name
 
     if (todo.date) {
+      const day = templateClone.querySelector("[data-list-item-day]")
+      days(todo, day)
+
       const date = templateClone.querySelector("[data-list-item-date]")
       const dateParts = todo.date.split("/")
       const parsedDate = new Date(
@@ -215,6 +223,35 @@ function toDoList() {
     enableDeleteAllBtn(todos)
 
     list.appendChild(templateClone)
+  }
+
+  // Display day of date
+  function days(todo, day) {
+    switch (todo.day) {
+      case 0:
+        day.innerHTML = "Sun<span class='visually-hidden'>day</span>"
+        break
+      case 1:
+        day.innerHTML = "Mon<span class='visually-hidden'>day</span>"
+        break
+      case 2:
+        day.innerHTML = "Tue<span class='visually-hidden'>sday</span>"
+        break
+      case 3:
+        day.innerHTML = "Wed<span class='visually-hidden'>nesday</span>"
+        break
+      case 4:
+        day.innerHTML = "Thu<span class='visually-hidden'>rsday</span>"
+        break
+      case 5:
+        day.innerHTML = "Fri<span class='visually-hidden'>day</span>"
+        break
+      case 6:
+        day.innerHTML = "Sat<span class='visually-hidden'>urday</span>"
+        break
+      default:
+        console.error("Something's gone wrong, please try again later.")
+    }
   }
 
   // Edit button

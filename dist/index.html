@@ -55,7 +55,7 @@
           <label for="todo-text-input">To-do <span class="required">*</span></label>
           <input type="text" id="todo-text-input" placeholder="Add a task..." required data-input-text>
         </div>
-        <div class="todo-buttons">
+        <div class="buttons-wrapper">
           <button>Add Todo</button>
           <button id="reset">Reset</button>
         </div>
@@ -78,11 +78,14 @@
       </div>
       <template id="list-item-template">
         <li class="list-item" data-list-item>
+          <div class="date-wrapper">
+            <p data-list-item-day class="day"></p>
+            <p data-list-item-date class="date"></p>
+          </div>
           <div>
-            <p data-list-item-date class="date">dd/mm/yy</p>
             <p data-list-item-text class="text"></p>
           </div>
-          <div class="form-buttons">
+          <div class="buttons-wrapper">
             <button data-button-edit class="btn-edit">Edit</button>
             <button data-button-complete class="btn-complete">Complete</button>
             <button data-button-delete class="btn-delete">Delete</button>

@@ -148,6 +148,8 @@ input {
     padding: 3.2rem 1.6rem;
     border-top: var(--border-thick);
 
+    font-size: clamp(1.2rem, 1.1rem + 0.4444vw, 1.6rem);
+
     & a:hover {
         text-decoration: underline;
     }
